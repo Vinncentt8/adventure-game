@@ -24,38 +24,20 @@ function startlevel(event){
 	document.getElementById('level_title').innerHTML = 'Je slaapt maar het word tijd dat je wakker word!';
 	document.getElementById('option2').style.display = 'none';
 	document.getElementById('seventh_image').style.display = 'none';
+	document.getElementById('fifth_image').style.display = 'none';
 	document.getElementById("seconds").innerHTML=pad(++sec%60);
 	document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
 	document.getElementById('sixth_image').src = 'img/papieren.jpg';
 	document.getElementById('info').src = 'img/info.jpg';
 		opt1.innerHTML = 'Wakker worden?';
 		opt1.onclick = start;
-	}
 
-	document.getElementById('third_image').onclick = function(){
-		geld = true;
-		document.getElementById('third_image').style.display = 'none';
-	}
-	
-	document.getElementById('sixth_image').onclick = function(){	
-		papieren = true;
-		document.getElementById('sixth_image').style.display = 'none';
-	}
-	
-	document.getElementById('fourth_image').onclick = function(){	
-		bril = true;
-		document.getElementById('fourth_image').style.display = 'none';
-	}
-	
 	document.getElementById('second_image').onclick = function(){	
 		wekker = true;
 		document.getElementById('second_image').style.display = 'none';
 	}
+}
 	
-	document.getElementById('fifth_image').onclick = function(){	
-		snack = true;
-		document.getElementById('fifth_image').style.display = 'none';
-	}
 			
 
 function start(event){
@@ -69,6 +51,12 @@ function start(event){
 		document.getElementById('level_image').src = 'img/nergens.jpg';
 			opt1.innerHTML = 'Scherper zien?';
 			opt1.onclick = nergens;
+
+	document.getElementById('fourth_image').onclick = function(){	
+
+		bril = true;
+		document.getElementById('fourth_image').style.display = 'none';
+	}
 			}
 	else{ 
 		alert('Je moet de wekker gebruiken om wakker te worden!');
@@ -82,11 +70,18 @@ function nergens(event){
 	console.log("nergens");
 	document.getElementById('level_image').src = 'img/real.jpg';
 	document.getElementById('option2').style.display = 'inline-block';
+	document.getElementById('second_image').style.display = 'none';
 	document.getElementById('level_title').innerHTML = 'Goed bezig! Vind nu de weg naar huis!';
 		opt1.innerHTML = 'Met de bus?';
 		opt1.onclick = Debus;
 		opt2.innerHTML = 'Liften?';
 		opt2.onclick = liften;
+
+	document.getElementById('sixth_image').onclick = function(){	
+
+		papieren = true;
+		document.getElementById('sixth_image').style.display = 'none';
+	}
 			}
 	else{ 
 		alert('Je moet wat doen om verder te komen');
@@ -97,12 +92,18 @@ function Debus(event){
 	console.log("Debus");
 	document.getElementById('level_title').innerHTML = 'Je ziet de bus die je nodig hebt.';
 	document.getElementById('level_image').src = 'img/bushalte.jpg';
-	document.getElementById('second_image').style.display = 'block';
+	document.getElementById('second_image').style.display = 'none';
 	document.getElementById('third_image').style.display = 'block';
 		opt1.innerHTML = 'instappen';
 		opt1.onclick = inbus;
 		opt2.innerHTML = 'wachten';
 		opt2.onclick = wachten;
+
+	document.getElementById('third_image').onclick = function(){
+
+		geld = true;
+		document.getElementById('third_image').style.display = 'none';
+	}
 	}
 
 function inbus(event){
@@ -111,6 +112,7 @@ function inbus(event){
 		document.getElementById('level_title').innerHTML = 'Eindelijk zit je in de bus, honger gekregen?';
 		document.getElementById('level_image').src = 'img/indebus.jpg';
 		document.getElementById('second_image').style.display = 'none';
+		document.getElementById('sixth_image').style.display = 'none';
 		document.getElementById('option2').style.display = 'none';
 			opt1.innerHTML = 'Bijna thuis!';
 			opt1.onclick = uitdeauto;
@@ -123,21 +125,24 @@ function inbus(event){
 function wachten(event){
 	console.log("wachten");
 	document.getElementById('level_image').src = 'img/wachten.jpg';
-		opt1.innerHTML = 'instappen';
-		opt1.onclick = inbus;
-		opt2.innerHTML = 'lopen';
-		opt2.onclick = lopen;
+	opt1.innerHTML = 'instappen';
+	opt1.onclick = inbus;
+	opt2.innerHTML = 'lopen';
+	opt2.onclick = lopen;
 }
 
 function lopen(event){
 	console.log("Lopen");
 	document.getElementById('level_title').innerHTML = 'Je bent verdwaald. En je weet niet de weg terug';
 	document.getElementById('level_image').src = 'img/lost.jpg';
-	document.getElementById('second_image').style.display = 'block';
+	document.getElementById('second_image').style.display = 'none';
+	document.getElementById('third_image').style.display = 'none';
+	document.getElementById('fourth_image').style.display = 'none';
+	document.getElementById('third_image').style.display = 'none';
 	document.getElementById('option2').style.display = 'none';
 	document.getElementById('uitleg').innerHTML = 'Je kunt niet verder begin overnieuw!!';
-		opt1.innerHTML = 'Verdwaald';
-		opt1.onclick = verdwaald;
+	opt1.innerHTML = 'Verdwaald';
+	opt1.onclick = verdwaald;
 
 }
 
@@ -176,7 +181,8 @@ function liften(event){
 		document.getElementById('option2').style.display = 'none';
 			opt1.innerHTML = 'instappen';
 			opt1.onclick = indeauto;
-			}
+	
+}
 	else{ 
 		alert('Als je wilt liften heb je iets nodig!');
 		}
@@ -189,7 +195,7 @@ function indeauto(event){
 	document.getElementById('option2').style.display = 'none';
 	document.getElementById('third_image').style.display = 'none';
 	document.getElementById('sixth_image').style.display = 'none';
-		opt1.innerHTML = 'Uitstappen';
+		opt1.innerHTML = 'Uitstappen?';
 		opt1.onclick = uitdeauto;
 }
 
@@ -198,12 +204,17 @@ function uitdeauto(event){
 	document.getElementById('level_title').innerHTML = 'Je bent nu vlak bij huis, heb je honger gekregen?';
 	document.getElementById('level_image').src = 'img/carpool.jpg';
 	document.getElementById('third_image').style.display = 'none';
+	document.getElementById('fifth_image').style.display = 'inline-block';
 	document.getElementById('option2').style.display = 'none';
 	document.getElementById('sixth_image').style.display = 'none';
 	document.getElementById('second_image').style.display = 'none';
 		opt1.innerHTML = 'Verder naar huis?';
 		opt1.onclick = thuis;
 
+	document.getElementById('fifth_image').onclick = function(){	
+		snack = true;
+		document.getElementById('fifth_image').style.display = 'none';
+	}
 }
 
 function thuis(event){
