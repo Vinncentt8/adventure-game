@@ -1,14 +1,185 @@
 body {
-	background-color: silver;
-	font-family: sans-serif;
+	background-color: black;
+	font-family: 'Lato', sans-serif;
 }
 
-#level_title {
-	font-size: 18px;
-	color: black;		
-	font-weight: bold;
+#level_title{
+    z-index: 20;
+    width: 134px;
+    position: absolute;
+    font-size: 18px;
+    color: black;
+    top: 20px;
+    text-align: center;
+    right: 104px;
+    top: 118px;
+}
+
+#tijd{
+    position: absolute;
+    background: rgba(255,255,255, 0.3);
+    border-radius: 20px;
+    border: 1px solid #FFF;
+    width: 125px;
+    height: 35px;
+    margin-left: 1002px;
+    margin-top: 369px;
+
+}
+
+#texttijd{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    margin-left: 1030px;
+    margin-top: 376px;
+}
+
+#minutes{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    margin-left: 71px;
+    margin-top: 7px;
+}
+
+#seconds{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    margin-left: 89px;
+    margin-top: 7px;
+}
+
+#uitleg{
+    position: absolute;
+    background-color: black;
+    padding: 7px;
+    border: 1px solid #FFF;
+    margin-left: 15px;
+    height: 287px;
+    width: 151px;
+    margin-top: 88px;
+    color: white;
 }
 
 #level_image {
-	height: 500px;
+    height: 550px;
+    width: 1021px;
+    margin-left: 155px;
+    margin-top: 0px;
+
+ }
+
+#navbar{
+	position: absolute;
+    margin-top: 20px;
+    margin-left: 185px;
+}
+
+#second_image/*wekker*/{
+    position: absolute;
+    left: 228px;
+    bottom: 199px;
+    width: 50px;
+    height: 50px;
+
+}
+
+
+#third_image /*geld*/{
+    position: absolute;
+    left: 295px;
+    bottom: 199px;
+    width: 50px;
+    height: 50px;
+}
+
+#option1, #option2{
+	border-radius: 8px;
+	background-color: #FF3232; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#inventory{
+    position: absolute;
+    background: rgba(255,255,255, 0.3);
+    border: 1px solid #FFF;
+    border-radius: 20px;
+    margin-left: 202px;
+    height: 150px;
+    width: 220px;
+    margin-top: -192px;
+}
+
+#denkwolk{
+    position: absolute;
+    max-width: 294px;
+    left: 1010px;
+    top: 57px;
+}
+
+#info{
+	position: absolute;
+    max-width: 100px;
+    left: 61px;
+    top: 39px;
+}
+
+#fourth_image/*bril*/{
+    position: absolute;
+    left: 221px;
+    bottom: 130px;
+    width: 65px;
+    height: 50px;
+}
+
+#fifth_image/*snack*/{
+    position: absolute;
+    left: 294px;
+    bottom: 130px;
+    width: 65px;
+    height: 50px;
+}
+
+#sixth_image/*papieren*/{
+    position: absolute;
+    left: 369px;
+    bottom: 199px;
+    width: 50px;
+    height: 50px;
+}
+
+#inventory2{
+	position: absolute;
+    background: rgba(255,255,255, 0.5);
+    border: 1px solid #FFF;
+    border-radius: 20px;
+    margin-left: 250px;
+    height: 40px;
+    width: 130px;
+    margin-top: -233px;
+}
+
+
+#text2{
+	position: absolute;
+    font-size: 24px;
+    margin-top: -230px;
+    margin-left: 264px;
+    color: black;
+}
+
+#seventh_image{
+    position: absolute;
+    max-width: 280px;
+    margin-left: -996px;
 }
