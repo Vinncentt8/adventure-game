@@ -1,18 +1,19 @@
 // javascript library for simple game development
-
-var geld = false;
-var wekker = false;
-var bril = false;
-var snack = false;
-var papieren = false;
-var opt1 = document.getElementById('option1');
-var opt2 = document.getElementById('option2');
+	var geld;
+	var wekker;
+	var bril;
+	var snack;
+	var snack2;
+	var papieren;
+	var opt1;
+	var opt2;
+	var sec = 0;
   
 
     
 function pad ( val ) { return val > 9 ? val : "0" + val; }
 
-var sec = 0;
+
 
 setInterval(function(){
     document.getElementById("seconds").innerHTML=pad(++sec%60);
@@ -21,16 +22,31 @@ setInterval(function(){
 
 function startlevel(event){
 	console.log("startlevel");
+	document.getElementById('third_image').style.display = 'inline-block';
+	geld = false;
+	wekker = false;
+	bril = false;
+	snack = false;
+	snack2 = false;
+	papieren = false;
+	sec = 0;						
+	opt1 = document.getElementById('option1');
+	opt2 = document.getElementById('option2');
 	document.getElementById('level_title').innerHTML = 'Je slaapt maar het word tijd dat je wakker word!';
 	document.getElementById('option2').style.display = 'none';
+	document.getElementById('uitleg').style.display = 'block';
+	document.getElementById('info').style.display = 'inline-block';
+	document.getElementById('fourth_image').style.display = 'inline-block';
+	document.getElementById('level_image').src = 'img/droom.jpg';
+	document.getElementById('nineth_image').style.display = 'none';
 	document.getElementById('seventh_image').style.display = 'none';
 	document.getElementById('fifth_image').style.display = 'none';
 	document.getElementById("seconds").innerHTML=pad(++sec%60);
 	document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
-	document.getElementById('sixth_image').src = 'img/papieren.jpg';
+	document.getElementById('sixth_image').style.display = 'block';
 	document.getElementById('info').src = 'img/info.jpg';
-		opt1.innerHTML = 'Wakker worden?';
-		opt1.onclick = start;
+	opt1.innerHTML = 'Wakker worden?';
+	opt1.onclick = start;
 
 	document.getElementById('second_image').onclick = function(){	
 		wekker = true;
@@ -49,8 +65,8 @@ function start(event){
 		document.getElementById('uitleg').style.display = 'none';
 		document.getElementById('fourth_image').style.display = 'block';
 		document.getElementById('level_image').src = 'img/nergens.jpg';
-			opt1.innerHTML = 'Scherper zien?';
-			opt1.onclick = nergens;
+		opt1.innerHTML = 'Scherper zien?';
+		opt1.onclick = nergens;
 
 	document.getElementById('fourth_image').onclick = function(){	
 
@@ -72,10 +88,10 @@ function nergens(event){
 	document.getElementById('option2').style.display = 'inline-block';
 	document.getElementById('second_image').style.display = 'none';
 	document.getElementById('level_title').innerHTML = 'Goed bezig! Vind nu de weg naar huis!';
-		opt1.innerHTML = 'Met de bus?';
-		opt1.onclick = Debus;
-		opt2.innerHTML = 'Liften?';
-		opt2.onclick = liften;
+	opt1.innerHTML = 'Met de bus?';
+	opt1.onclick = Debus;
+	opt2.innerHTML = 'Liften?';
+	opt2.onclick = liften;
 
 	document.getElementById('sixth_image').onclick = function(){	
 
@@ -90,14 +106,14 @@ function nergens(event){
 
 function Debus(event){
 	console.log("Debus");
-	document.getElementById('level_title').innerHTML = 'Je ziet de bus die je nodig hebt.';
+	document.getElementById('level_title').innerHTML = 'Je ziet de bus die je nodig hebt. Wat ga je nu';
 	document.getElementById('level_image').src = 'img/bushalte.jpg';
 	document.getElementById('second_image').style.display = 'none';
 	document.getElementById('third_image').style.display = 'block';
-		opt1.innerHTML = 'instappen';
-		opt1.onclick = inbus;
-		opt2.innerHTML = 'wachten';
-		opt2.onclick = wachten;
+	opt1.innerHTML = 'Instappen?';
+	opt1.onclick = inbus;
+	opt2.innerHTML = 'Wachten?';
+	opt2.onclick = wachten;
 
 	document.getElementById('third_image').onclick = function(){
 
@@ -109,13 +125,13 @@ function Debus(event){
 function inbus(event){
 	if (geld == true){
 		console.log("inbus");
-		document.getElementById('level_title').innerHTML = 'Eindelijk zit je in de bus, honger gekregen?';
+		document.getElementById('level_title').innerHTML = 'Eindelijk zit je in de bus!';
 		document.getElementById('level_image').src = 'img/indebus.jpg';
 		document.getElementById('second_image').style.display = 'none';
 		document.getElementById('sixth_image').style.display = 'none';
 		document.getElementById('option2').style.display = 'none';
-			opt1.innerHTML = 'Bijna thuis!';
-			opt1.onclick = uitdeauto;
+		opt1.innerHTML = 'Bijna thuis!';
+		opt1.onclick = uitdeauto;
 			}
 	else{ 
 		alert('Je hebt het geld nodig om in te stappen!');
@@ -125,50 +141,54 @@ function inbus(event){
 function wachten(event){
 	console.log("wachten");
 	document.getElementById('level_image').src = 'img/wachten.jpg';
-	opt1.innerHTML = 'instappen';
+	opt1.innerHTML = 'Instappen';
 	opt1.onclick = inbus;
-	opt2.innerHTML = 'lopen';
+	opt2.innerHTML = 'Lopen';
 	opt2.onclick = lopen;
 }
 
 function lopen(event){
 	console.log("Lopen");
-	document.getElementById('level_title').innerHTML = 'Je bent verdwaald. En je weet niet de weg terug';
+	document.getElementById('level_title').innerHTML = 'Waar ben je nu?';
 	document.getElementById('level_image').src = 'img/lost.jpg';
+	document.getElementById('sixth_image').style.display = 'none';
 	document.getElementById('second_image').style.display = 'none';
 	document.getElementById('third_image').style.display = 'none';
 	document.getElementById('fourth_image').style.display = 'none';
 	document.getElementById('third_image').style.display = 'none';
 	document.getElementById('option2').style.display = 'none';
-	document.getElementById('uitleg').innerHTML = 'Je kunt niet verder begin overnieuw!!';
 	opt1.innerHTML = 'Verdwaald';
 	opt1.onclick = verdwaald;
 
 }
 
 function verdwaald(event){
-	console.log("verdwaald");
-	document.getElementById('level_title').innerHTML = 'Je bent verdwaald. En je weet niet de weg terug';
-	document.getElementById('level_image').src = ('img/gameover.jpg');
-	document.getElementById('second_image').style.display = 'block';
-	document.getElementById('uitleg').innerHTML = 'Je kunt niet verder begin overnieuw!!';
-		opt1.innerHTML = 'Overnieuw beginnen!';
+		console.log("verdwaald");
+		document.getElementById('level_title').innerHTML = 'Game Over!!';
+		document.getElementById('level_image').src = ('img/gameover.jpg');
+		document.getElementById('second_image').style.display = 'none';
+		document.getElementById('sixth_image').style.display = 'none';
+		document.getElementById('nineth_image').style.display = 'inline-block';
+		opt1.innerHTML = 'Game over!!';
 		opt1.onclick = gameover;
 
+		document.getElementById('nineth_image').onclick = function(){	
+			snack2 = true;
+			document.getElementById('nineth_image').style.display = 'none';
+		}
 }
 
 function gameover(event){
-	if(snack == true){
+	if(snack2 == true){
 		console.log("gameOver");
 		document.getElementById('level_title').innerHTML = 'Je bent verdwaald. ';
 		document.getElementById('second_image').style.display = 'block';
-		document.getElementById('uitleg').innerHTML = 'Je kunt niet verder begin overnieuw!!';
-			opt1.innerHTML = 'Overnieuw beginnen';
-			}
+		document.getElementById('fifth_image').style.display = 'inline-block';
+		opt1.onclick = startlevel;
+}
 	else{
 		alert('Gebruik de snack om terug te keren!');
-	}
-
+		}
 }
 
 function liften(event){
@@ -179,14 +199,14 @@ function liften(event){
 		document.getElementById('third_image').style.display = 'block';
 		document.getElementById('third_image').style.display = 'none';
 		document.getElementById('option2').style.display = 'none';
-			opt1.innerHTML = 'instappen';
+			opt1.innerHTML = 'Instappen';
 			opt1.onclick = indeauto;
 	
 }
 	else{ 
 		alert('Als je wilt liften heb je iets nodig!');
 		}
-	}
+}
 
 function indeauto(event){
 	console.log("indeauto");

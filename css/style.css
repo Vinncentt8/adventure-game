@@ -39,8 +39,16 @@ body {
     position: absolute;
     color: black;
     font-weight: bold;
-    margin-left: 71px;
+    margin-left: 60px;
     margin-top: 7px;
+}
+
+#dubbelpunt{
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    margin-left: 82px;
+    margin-top: 5px;
 }
 
 #seconds{
@@ -183,4 +191,12 @@ body {
     position: absolute;
     max-width: 280px;
     margin-left: -996px;
+}
+
+#nineth_image{
+    position: absolute;
+    left: 295px;
+    bottom: 199px;
+    width: 50px;
+    height: 50px;
 }
