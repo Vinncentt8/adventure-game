@@ -39,6 +39,7 @@ function startlevel(event){
 	document.getElementById('fourth_image').style.display = 'inline-block';
 	document.getElementById('level_image').src = 'img/droom.jpg';
 	document.getElementById('nineth_image').style.display = 'none';
+	document.getElementById('second_image').style.display = 'block';
 	document.getElementById('seventh_image').style.display = 'none';
 	document.getElementById('fifth_image').style.display = 'none';
 	document.getElementById("seconds").innerHTML=pad(++sec%60);
@@ -174,6 +175,7 @@ function verdwaald(event){
 
 		document.getElementById('nineth_image').onclick = function(){	
 			snack2 = true;
+			opt1.onclick = startlevel;
 			document.getElementById('nineth_image').style.display = 'none';
 		}
 }
